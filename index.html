@@ -95,7 +95,7 @@
                         <img src="assets/img/work-metiew-smith.png" alt="Anirban">
                       </div>
                       <p class="slider--item-title">Anirban</p>
-                      <p class="slider--item-description">My official DP</p>
+                      <p class="slider--item-description">Romantic fellow</p> 
                     </a>
                   </li>
                   <li class="slider--item slider--item-right">
@@ -181,7 +181,7 @@
             <div class="hire">
               <h2>You want me to do</h2>
               <!-- checkout formspree.io for easy form setup -->
-              <form class="work-request">
+              <form class="work-request" onsubmit="sendEmail(); reset(); return false;">
                 <div class="work-request--options">
                   <span class="options-a">
                     <input id="opt-1" type="checkbox" value="app design">
@@ -279,5 +279,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendEmail() {
+    Email.send({
+    SecureToken : "a4ebd41d-004d-4b59-a1b8-47d228686729",
+   
+    To : 'iammrs.bidisha@gmail.com',
+    From : "guiderthe3@gmail.com",
+    Subject : "New customer",
+    Body : "From Sticker Factory" + "<br><br> Name: " + document.getElementById("name").value
+           + "<br> Email: " + document.getElementById("email").value
+         }).then(
+         message => alert("Sent succesfully")
+                 );
+  }
+</script>
 </body>
 </html>
